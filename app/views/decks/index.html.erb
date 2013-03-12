@@ -1,7 +1,8 @@
-Decks
-
-<%= link_to "New deck", "/decks/new" %>
-
+<%= link_to "New deck", new_deck_path %>
 <% @decks.each do |deck| %>
-<div><%= deck.name %></div>
+	<div>
+		<%= link_to deck.name, deck %>
+		<%=  link_to "Edit", edit_deck_path(deck) %>
+		<%=  link_to "Destroy", deck, method: :delete, confirm: "Are you sure?" %>
+	</div>
 <% end %>

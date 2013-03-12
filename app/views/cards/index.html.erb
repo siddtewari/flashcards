@@ -1,0 +1,7 @@
+<%= link_to "New cards", new_card_path %>
+<% @cards.each do |card| %>
+	<div>
+		<%= link_to card.front, card %>
+		<%= link_to card.back, card %>
+	</div>
+<% end %>

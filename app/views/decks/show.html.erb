@@ -1,0 +1,11 @@
+<%= @deck.name %>
+
+<%= link_to "New cards", new_deck_card_path(@deck) %>
+
+<% @deck.cards.each do |card| %>
+	<div>
+		<%= link_to card.front, [@deck, card] %>
+		<%= link_to "Edit", edit_deck_card_path(@deck, card) %>
+		<%= link_to "Destroy", [@deck, card], method: :delete, confirm: "Are you sure?" %>
+	</div>
+<% end %>
